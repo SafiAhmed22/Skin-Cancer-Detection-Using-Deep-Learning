@@ -1,0 +1,53 @@
+✅ Overall Accuracy
+Accuracy: 95%
+This means the model correctly predicted the class for 83 out of 87 test images.
+
+Accuracy = (TP + TN) / Total = (64 + 19) / 87 = 0.95
+
+📊 Per-Class Performance
+1. Melanoma
+Support: 65 samples
+
+Precision: 0.96 → Out of all images the model predicted as melanoma, 96% were actually melanoma.
+
+Recall: 0.98 → Out of 65 actual melanoma images, 98% were correctly identified.
+
+F1-score: 0.97 → Harmonic mean of precision and recall, showing excellent performance.
+
+2. Vascular Lesion
+Support: 22 samples
+
+Precision: 0.95 → Out of all vascular lesion predictions, 95% were correct.
+
+Recall: 0.86 → Out of 22 actual vascular lesion images, only 86% were detected (3 were misclassified).
+
+F1-score: 0.90 → Still strong, but lower than melanoma due to slightly weaker recall.
+
+🟡 Slight drop in recall for vascular lesion could be due to the smaller number of samples (140 total), which makes it harder for the model to generalize.
+
+🧮 Confusion Matrix
+lua
+Copy
+Edit
+                Predicted
+              | melanoma | vascular
+Actual --------|----------|---------
+melanoma       |   64     |   1
+vascular       |   3      |   19
+Out of 65 melanoma: 64 correct, 1 misclassified
+
+Out of 22 vascular lesions: 19 correct, 3 misclassified
+
+🟢 Indicates very few false positives and false negatives, which is great for medical applications.
+
+📈 ROC AUC Score: 0.984
+AUC near 1.0 is excellent.
+
+Shows the model is very good at distinguishing between the two classes regardless of the decision threshold.
+
+🧠 Summary
+Metric	Value	Interpretation
+Accuracy	95%	Excellent overall classification
+Melanoma F1	0.97	Outstanding detection
+Vascular F1	0.90	Very good, but slightly lower recall
+ROC AUC	0.984	Near-perfect separability
